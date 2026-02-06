@@ -1,5 +1,6 @@
 package com.aiging.product.bean;
 
+
 import lombok.Data;
 
 import java.math.BigDecimal;

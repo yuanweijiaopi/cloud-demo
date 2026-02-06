@@ -10,6 +10,7 @@
     <description>cloud-demo</description>
     <modules>
         <module>services</module>
+        <module>module</module>
     </modules>
 
     <properties>
