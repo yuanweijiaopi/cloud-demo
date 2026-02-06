@@ -2,7 +2,6 @@ package com.aiging.product.service;
 
 import com.aiging.product.bean.Product;
 import jakarta.annotation.Resource;
-import org.mockito.internal.matchers.Find;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
@@ -24,6 +23,9 @@ public class ProductService {
     private final String serviceName = "service-product";
 
     @Resource
+    RestTemplate restTemplate;
+
+    @Resource
     private DiscoveryClient discoveryClient;
 
     public Product getProductById(Long productId) {
@@ -41,7 +43,6 @@ public class ProductService {
         ServiceInstance serviceInstance = instances.get(0);
         String url = "http://" + serviceInstance.getHost()+ ":" + serviceInstance.getPort() + "/product?productId=" + productId;
 
-        RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(url,Product.class);
     }
 }
