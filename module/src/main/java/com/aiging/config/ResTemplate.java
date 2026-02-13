@@ -1,7 +1,8 @@
 package com.aiging.config;
 
+import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -11,10 +12,11 @@ import org.springframework.web.client.RestTemplate;
  * @Date 2026/2/6 11:33
  * @Version 1.0
  **/
-@Configuration
+@AutoConfiguration
 public class ResTemplate {
 
     @Bean
+    @LoadBalanced
     public RestTemplate resTemplate(){
         return new RestTemplate();
     }

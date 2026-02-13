@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Date 2026/1/28 10:37
  * @Version 1.0
  **/
-@SpringBootApplication(scanBasePackages = "com.aiging")
+@SpringBootApplication
 @EnableDiscoveryClient
 public class ProductMainApplication {
     public static void main(String[] args) {

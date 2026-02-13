@@ -30,4 +30,9 @@ public class ProductController {
     public Product getProductFormRemote(Long productId){
         return productService.getProductFormRemote(productId);
     }
+
+    @GetMapping("/product/getProductFormRemoteByLoadBalancerClient")
+    public Product getProductFormRemoteByLoadBalancerClient(Long productId){
+        return productService.getProductFormRemoteByLoadBalancerClient(productId);
+    }
 }
